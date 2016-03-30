@@ -124,7 +124,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 109248, guid: 6528abcb013fe492d837ba94be1f3b02, type: 2}
+      propertyPath: m_Name
+      value: AI
+      objectReference: {fileID: 0}
+    - target: {fileID: 109248, guid: 6528abcb013fe492d837ba94be1f3b02, type: 2}
+      propertyPath: m_TagString
+      value: PaletaIA
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11465194, guid: 6528abcb013fe492d837ba94be1f3b02, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 6528abcb013fe492d837ba94be1f3b02, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &827071474
@@ -234,6 +243,21 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &993027284 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109248, guid: 6528abcb013fe492d837ba94be1f3b02, type: 2}
+  m_PrefabInternal: {fileID: 683863149}
+--- !u!114 &993027290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 993027284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af12e37d953237a4aa0823d117c2ee24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1010312126
 GameObject:
   m_ObjectHideFlags: 0
@@ -248,7 +272,7 @@ GameObject:
   - 114: {fileID: 1010312131}
   - 54: {fileID: 1010312132}
   m_Layer: 0
-  m_Name: Paleta2
+  m_Name: Jugador
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -323,7 +347,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 15
-  jugador: 1
 --- !u!54 &1010312132
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -613,6 +636,18 @@ Prefab:
     - target: {fileID: 416218, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415696, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}
+      propertyPath: impulsoIni.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11415696, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}
+      propertyPath: impulsoIni.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108456, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}
+      propertyPath: m_TagString
+      value: Bola
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}

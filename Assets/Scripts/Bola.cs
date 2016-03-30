@@ -8,6 +8,11 @@ public class Bola : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        float velx = 10 + (10 * Random.value);
+        float velz = 10 + (10 * Random.value);
+
+        impulsoIni = new Vector3(velx,0,velz);
+
         rb = GetComponent<Rigidbody>();
         rb.AddForce(impulsoIni,ForceMode.Impulse);
 
