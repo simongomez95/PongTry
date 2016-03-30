@@ -5,15 +5,14 @@ using System.Collections;
 
 public class Jugador : MonoBehaviour {
 
-    public float vel = 20;
+    public float vel = 40;
 
     void Update ()
     {
-        float velInput = 0f;
 
-        velInput = Input.GetAxisRaw("Jugador");
+        float input_x = Input.GetAxis("Horizontal");
 
-        transform.position += new Vector3(velInput * vel * Time.deltaTime, 0f, 0f);
+        transform.position += new Vector3(input_x * vel * Time.deltaTime, 0f, 0f);
     }
 
     void OnCollisionEnter(Collision collision)
