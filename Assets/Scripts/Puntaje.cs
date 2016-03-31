@@ -9,7 +9,7 @@ public class Puntaje : MonoBehaviour {
 
     void Update()
     {
-        string texto = puntaje1 + " / " + puntaje2;
+        string texto = puntaje1 + " - " + puntaje2;
         this.GetComponent<TextMesh>().text = texto;
     }
 
