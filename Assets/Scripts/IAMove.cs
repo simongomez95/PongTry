@@ -14,9 +14,11 @@ public class IAMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update ()  {
-		if(paleta.transform.position.x>-10 && paleta.transform.position.x<10 && Mathf.Abs(paleta.transform.position.z-bola.transform.position.z) < 20)
-        {
-			paleta.transform.position = new Vector3(bola.transform.position.x, 0.8f, 18.0f);
+		if(bola.transform.position.x >= transform.position.x){
+			transform.position += new Vector3(0.25f, 0f, 0f);
+		}
+		if(bola.transform.position.x <= transform.position.x){
+			transform.position -= new Vector3(0.25f, 0f, 0f);
 		}
 	}
 }
