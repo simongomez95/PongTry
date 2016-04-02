@@ -8,8 +8,8 @@ public class Bola : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        float velx = 10 + (10 * Random.value);
-        float velz = 10 + (10 * Random.value);
+        float velx = 10 + (10 * Random.value+0.1f);
+        float velz = 10 + (10 * Random.value+0.1f);
 
         impulsoIni = new Vector3(velx,0,velz);
 
