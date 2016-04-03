@@ -537,6 +537,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af12e37d953237a4aa0823d117c2ee24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &993027291
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 993027284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1010312126
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,6 +564,7 @@ GameObject:
   - 54: {fileID: 1010312132}
   - 114: {fileID: 1010312134}
   - 114: {fileID: 1010312133}
+  - 65: {fileID: 1010312135}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -675,6 +688,18 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
+--- !u!65 &1010312135
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010312126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1025456791
 GameObject:
   m_ObjectHideFlags: 0
@@ -811,6 +836,22 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a0572dfe07486402baef05ae25c3faf1, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1776232180 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 109996, guid: a0572dfe07486402baef05ae25c3faf1, type: 2}
+  m_PrefabInternal: {fileID: 1106186077}
+--- !u!65 &1776232186
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1776232180}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1979467846
 GameObject:
   m_ObjectHideFlags: 0
@@ -961,6 +1002,14 @@ Prefab:
     - target: {fileID: 108456, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}
       propertyPath: m_TagString
       value: Bola
+      objectReference: {fileID: 0}
+    - target: {fileID: 5462710, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}
+      propertyPath: m_Constraints
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5462710, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}
+      propertyPath: m_Mass
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}

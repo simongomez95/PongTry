@@ -11,14 +11,14 @@ public class IAMove : MonoBehaviour {
 		bola = GameObject.FindGameObjectWithTag("Bola");
 		paleta = GameObject.FindGameObjectWithTag("PaletaIA");
 	}
-	
+
 	// Update is called once per frame
 	void Update ()  {
-		if(bola.transform.position.x >= transform.position.x){
-			transform.position += new Vector3(0.25f, 0f, 0f);
+		if(bola.transform.position.x >= transform.position.x && Mathf.Abs(bola.transform.position.z-paleta.transform.position.z) <= 25){
+			transform.position += new Vector3(0.4f, 0f, 0f);
 		}
-		if(bola.transform.position.x <= transform.position.x){
-			transform.position -= new Vector3(0.25f, 0f, 0f);
+		if(bola.transform.position.x <= transform.position.x && Mathf.Abs(bola.transform.position.z-paleta.transform.position.z) <= 25){
+			transform.position -= new Vector3(0.4f, 0f, 0f);
 		}
 	}
 }

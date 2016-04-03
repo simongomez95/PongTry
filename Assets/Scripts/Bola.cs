@@ -13,13 +13,31 @@ public class Bola : MonoBehaviour {
 
         impulsoIni = new Vector3(velx,0,velz);
 
-        rb = GetComponent<Rigidbody>();
+		rb = GetComponent<Rigidbody>();
         rb.AddForce(impulsoIni,ForceMode.Impulse);
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-           
-	}
+
+//	float hitFactor(Vector3 bola, Vector3 paleta, float anchoR){
+//
+//		return (bola.x - paleta.x) / anchoR;
+//	}	
+//	
+//	void OnCollisionEnter(Collision col){
+//		if(col.gameObject.name == "Jugador"){
+//			float x = hitFactor (transform.position,col.transform.position,col.collider.bounds.size.x);
+//
+//			Vector3 dir = new Vector3 (1 + x, 1, -1).normalized;
+//			GetComponent<Rigidbody> ().velocity = Vector3.Scale(GetComponent<Rigidbody> ().velocity , dir);
+//		}
+//
+//		if(col.gameObject.name == "AI"){
+//			float x = hitFactor (transform.position,col.transform.position,col.collider.bounds.size.x);
+//
+//			Vector3 dir = new Vector3 (1+ x, 1, 1).normalized;
+//			GetComponent<Rigidbody> ().velocity = Vector3.Scale(GetComponent<Rigidbody> ().velocity , dir);
+//		}
+//	}
+//
+//
 }

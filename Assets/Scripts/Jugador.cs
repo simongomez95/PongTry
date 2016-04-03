@@ -5,7 +5,7 @@ using System.Collections;
 
 public class Jugador : MonoBehaviour {
 
-    public float vel = 40;
+    public float vel = 50;
 
     void Update ()
     {
@@ -19,7 +19,7 @@ public class Jugador : MonoBehaviour {
     {
         if (collision.gameObject.name == "Bola")
         {
-            collision.rigidbody.AddForce(collision.rigidbody.velocity.normalized * (float)1.5, ForceMode.Impulse);
+            collision.rigidbody.AddForce(collision.rigidbody.velocity.normalized * 1.2f, ForceMode.Impulse);
         }
     }
 }
