@@ -482,6 +482,7 @@ MonoBehaviour:
   vel: 15
   percentDrop: 5
   powerup: {fileID: 173498, guid: 423b19ac09bdf433ca9945ee94c07d3d, type: 2}
+  agrandado: 0
 --- !u!54 &1010312132
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -20,11 +20,11 @@ public class Jugador : MonoBehaviour {
         transform.position += new Vector3(input_x * vel * Time.deltaTime, 0f, 0f);
         
         if(agrandado) {
-            transform.localScale = new Vector3(1.5f, 1f, 1f);
+            transform.localScale = new Vector3(8f, transform.localScale.y, transform.localScale.z);
             StartCoroutine(DesAgrandar());
         }
         else {
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(4f, transform.localScale.y, transform.localScale.z);
         }
     }
 
