@@ -7,10 +7,13 @@ public enum ePlayer
     Right
 }
 
+
+
 public class BordeGol : MonoBehaviour {
 
     public ePlayer jugador;
     public Puntaje puntaje;
+    public CampoJuego campoJuego;
 
 	void OnCollisionEnter(Collision col)
     {
@@ -20,13 +23,8 @@ public class BordeGol : MonoBehaviour {
 			float velx = (5 + (5 * (Random.value + 1f))) * ((Random.Range(0, 1) * 2 - 1));
 			float velz = (5 + (5 * (Random.value + 1f))) * ((Random.Range(0, 1) * 2 - 1));
 
-            Vector3 impulsoIni = new Vector3(velx, 0, velz);
-
-            bola.transform.position = new Vector3(0f, 1f, 0f);
-
-            bola.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            bola.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            bola.GetComponent<Rigidbody>().AddForce(impulsoIni, ForceMode.Impulse);
+            campoJuego.invertido = false;
+            bola.Spawnear();
 
             if (jugador == ePlayer.Right)
             {
