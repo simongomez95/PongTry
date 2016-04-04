@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
-using System.Collections;
-
 public class PowerUp : MonoBehaviour {
+    
+    public float percentDrop = 50f;
 
 	// Use this for initialization
 	void Start () {
@@ -17,10 +17,28 @@ public class PowerUp : MonoBehaviour {
     void OnCollisionEnter(Collision coll) {
         
         if(coll.gameObject.tag == "Bola") {
-            CampoJuego cj = GameObject.FindGameObjectWithTag("Field").GetComponent<CampoJuego>();
-            cj.invertido = true;
+            
+            float rand = Random.Range(0f, 100f);
+            if (rand < percentDrop) {
+                Invertir();
+            }
+            else {
+                Agrandar();
+            }
+            
             Destroy(gameObject);
         }
         
+    }
+
+    private void Agrandar()
+    {
+        Jugador jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Jugador>();
+        jugador.agrandado = true;
+    }
+
+    void Invertir() {
+        CampoJuego cj = GameObject.FindGameObjectWithTag("Field").GetComponent<CampoJuego>();
+            cj.invertido = true;
     }
 }
