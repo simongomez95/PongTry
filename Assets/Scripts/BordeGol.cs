@@ -20,8 +20,10 @@ public class BordeGol : MonoBehaviour {
         Bola bola = col.gameObject.GetComponent<Bola>();
         if (bola != null)
         {
+            
             campoJuego.invertido = false;
-            bola.Spawnear();
+            StartCoroutine(SpawnearBola(bola));
+            
 
             if (jugador == ePlayer.Right)
             {
@@ -33,5 +35,11 @@ public class BordeGol : MonoBehaviour {
             }
 
         }
+    }
+    
+    IEnumerator SpawnearBola(Bola bola) {
+        
+        yield return new WaitForSeconds(0.1f);
+        bola.Spawnear();
     }
 }
