@@ -5,7 +5,7 @@ using System.Collections;
 
 public class Jugador : MonoBehaviour {
 
-    public float vel = 50;
+    public float vel = 60;
     public float percentDrop = 5f;
     
     public GameObject powerup;
