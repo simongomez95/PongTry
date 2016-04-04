@@ -20,9 +20,6 @@ public class BordeGol : MonoBehaviour {
         Bola bola = col.gameObject.GetComponent<Bola>();
         if (bola != null)
         {
-			float velx = (5 + (5 * (Random.value + 1f))) * ((Random.Range(0, 1) * 2 - 1));
-			float velz = (5 + (5 * (Random.value + 1f))) * ((Random.Range(0, 1) * 2 - 1));
-
             campoJuego.invertido = false;
             bola.Spawnear();
 
