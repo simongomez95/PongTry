@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Bola : MonoBehaviour {
 
-	public int velMax;
+	public int velIni;
 	public Puntaje puntos;
 	public Rigidbody rb;
 	public GameObject jugador1;
@@ -12,11 +12,11 @@ public class Bola : MonoBehaviour {
 
 	// Use this for initialization
 	void Start (){
-        //posicionInicial = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Spawnear();
 	}
 
 	void OnCollisionEnter(Collision col){
+		Debug.Log (GetComponent<Rigidbody>().velocity);
 		if(col.gameObject.gameObject == jugador1){
 			Spawnear();
 			puntos.puntaje1++;
@@ -27,19 +27,26 @@ public class Bola : MonoBehaviour {
 	}
     
     public void Spawnear(){
-		Vector3 inicial1 = new Vector3(0, 1, 0);
-		Vector3 inicial2 = new Vector3(0, 18, 0);
-		float velx = (velMax-3)*Random.value*(Random.Range(0, 2)*2-1);
-		float velz = (velMax-Mathf.Abs(velx))*(Random.Range(0, 2)*2-1);
-
+		float velx = (velIni-3)*Random.value*(Random.Range(0, 2)*2-1);
+		float velz = (velIni-Mathf.Abs(velx))*(Random.Range(0, 2)*2-1);
+		float z=0;
+		if(velx*velz>0){
+			if(velx<0){
+				z=15;
+			}
+		}else{
+			if(velz<0){
+				z=15;
+			}
+		}
+		Vector3 inicial1 = new Vector3(0f, 1f, z);
+		Vector3 inicial2 = new Vector3(0f, 18f, z);
 		if(campo.invertido){
 			transform.position = inicial2;
 		}else{
 			transform.position = inicial1;
 		}
         Vector3 impulsoIni = new Vector3(velx,0,velz);
-		Debug.Log (impulsoIni);
-
 		rb = GetComponent<Rigidbody>();
         rb.velocity = Vector3.zero;
         rb.AddForce(impulsoIni,ForceMode.Impulse);
