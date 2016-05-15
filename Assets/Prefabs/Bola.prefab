@@ -91,11 +91,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27c602016b4ad574b8d5325e0eba35cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velIni: 8
+  velIncre: 0.4
   puntos: {fileID: 0}
   rb: {fileID: 5462710}
-  impulsoIni: {x: 0, y: 0, z: 0}
+  IA: {fileID: 0}
+  player: {fileID: 0}
   jugador1: {fileID: 0}
   jugador2: {fileID: 0}
+  derecha: {fileID: 0}
+  izquierda: {fileID: 0}
+  campo: {fileID: 0}
 --- !u!135 &13522704
 SphereCollider:
   m_ObjectHideFlags: 1
