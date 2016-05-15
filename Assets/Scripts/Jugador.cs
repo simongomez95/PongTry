@@ -40,6 +40,7 @@ public class Jugador : MonoBehaviour {
             float rand = Random.Range(0f, 100f);
 
             //Decidir si cambia al breakout
+            /*
             if (rand < percentBreak) {
                 collision.rigidbody.velocity = Vector3.zero;
 
@@ -50,8 +51,16 @@ public class Jugador : MonoBehaviour {
                 //comienza a rotar
                 StartCoroutine(CambiarEscena(collision.gameObject));          
             }
-
-            collision.rigidbody.AddForce(collision.rigidbody.velocity.normalized * 1.1f, ForceMode.Impulse);
+            */
+            
+            //Calculo nueva velocidad de la bola basada en las velocidades de la bola y la paleta al chocar
+            var velo = collision.rigidbody.velocity;
+            velo.x = (velo.x) + (this.GetComponent<Rigidbody>().velocity.x);
+            collision.rigidbody.velocity = velo;
+            Debug.Log(velo);
+            
+            //codigo original de anadidura de fuerza
+            //collision.rigidbody.AddForce(collision.rigidbody.velocity.normalized * 1.1f, ForceMode.Impulse);
             
             //Decidir si se crea o no powerup
             rand = Random.Range(0f, 100f);
