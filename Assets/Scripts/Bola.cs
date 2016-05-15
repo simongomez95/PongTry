@@ -21,10 +21,6 @@ public class Bola : MonoBehaviour {
 		rb = GetComponent<Rigidbody>();
 	}
 
-	void Update(){
-		Debug.Log ("Velocidad: " + rb.velocity.magnitude);
-	}
-
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject.gameObject == jugador1){
 			Spawnear();
