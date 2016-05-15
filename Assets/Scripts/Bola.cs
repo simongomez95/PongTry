@@ -3,15 +3,28 @@ using System.Collections;
 
 public class Bola : MonoBehaviour {
 
+	Vector3 posicionInicial;
+	public Puntaje puntos;
+	public Rigidbody rb;
     public Vector3 impulsoIni;
-    Vector3 posicionInicial;
-    public Rigidbody rb;
+	public GameObject jugador1;
+	public GameObject jugador2;
 
 	// Use this for initialization
 	void Start () {
         posicionInicial = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Spawnear();
 
+	}
+
+	void OnCollisionEnter(Collision col){
+		if(col.gameObject.gameObject == jugador1){
+			Spawnear();
+			puntos.puntaje1++;
+		}else if(col.gameObject.gameObject == jugador2){
+			Spawnear();
+			puntos.puntaje2++;
+		}
 	}
     
     public void Spawnear() {
