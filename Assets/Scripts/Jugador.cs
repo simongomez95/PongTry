@@ -6,7 +6,7 @@ using System.Collections;
 public class Jugador : MonoBehaviour {
 
     public float vel = 60;
-    public float percentDrop = 5f;
+    public float percentDrop = 1000f;
     public float percentBreak = 50f;
     public int dirR = -1;
     public int pasoR = 1;
@@ -37,7 +37,7 @@ public class Jugador : MonoBehaviour {
 
         if (collision.gameObject.name == "Bola") {
 
-            float rand = Random.Range(0f, 100f);
+            int rand = Random.Range(0, 100);
 
             //Decidir si cambia al breakout
             /*
@@ -57,13 +57,13 @@ public class Jugador : MonoBehaviour {
             var velo = collision.rigidbody.velocity;
             velo.x = (velo.x) + (this.GetComponent<Rigidbody>().velocity.x);
             collision.rigidbody.velocity = velo;
-            Debug.Log(velo);
+            //Debug.Log(velo);
             
             //codigo original de anadidura de fuerza
             //collision.rigidbody.AddForce(collision.rigidbody.velocity.normalized * 1.1f, ForceMode.Impulse);
             
             //Decidir si se crea o no powerup
-            rand = Random.Range(0f, 100f);
+            rand = Random.Range(0, 100);
             if (rand < percentDrop) {
                 InstanciarPowerup();
             }
