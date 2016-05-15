@@ -28,7 +28,7 @@ public class Bola : MonoBehaviour {
     
     public void Spawnear(){
 		Vector3 inicial1 = new Vector3(0, 1, 0);
-		Vector3 inicial2 = new Vector3(0, 17, 0);
+		Vector3 inicial2 = new Vector3(0, 18, 0);
 		float velx = (velMax-3)*Random.value*(Random.Range(0, 2)*2-1);
 		float velz = (velMax-Mathf.Abs(velx))*(Random.Range(0, 2)*2-1);
 
