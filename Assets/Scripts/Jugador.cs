@@ -54,13 +54,12 @@ public class Jugador : MonoBehaviour {
             */
             
             //Calculo nueva velocidad de la bola basada en las velocidades de la bola y la paleta al chocar
-            /*
             var velo = collision.rigidbody.velocity;
             velo.x = (velo.x/2.0f) + (this.GetComponent<Rigidbody>().velocity.x+3.0f);
             collision.rigidbody.velocity = velo;
             Debug.Log(velo);
             Debug.Log("m"+this.GetComponent<Rigidbody>().velocity.x);
-            */
+            
             
             //codigo original de anadidura de fuerza
             //collision.rigidbody.AddForce(collision.rigidbody.velocity.normalized * 1.1f, ForceMode.Impulse);

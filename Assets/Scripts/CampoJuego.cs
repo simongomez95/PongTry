@@ -24,7 +24,7 @@ public class CampoJuego : MonoBehaviour {
     
     IEnumerator DesInvertir() {
         
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(10);
         
         invertido = false;
         
