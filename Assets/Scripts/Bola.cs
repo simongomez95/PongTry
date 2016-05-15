@@ -14,7 +14,6 @@ public class Bola : MonoBehaviour {
 	void Start () {
         posicionInicial = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         Spawnear();
-
 	}
 
 	void OnCollisionEnter(Collision col){
@@ -27,14 +26,13 @@ public class Bola : MonoBehaviour {
 		}
 	}
     
-    public void Spawnear() {
-        
+    public void Spawnear(){
         transform.position = posicionInicial;
         //float velx = 10 + (10 * Random.value+0.1f);
         //float velz = 10 + (10 * Random.value+0.1f);
-
-        float velx = (7 + (10 * (Random.value))) * ((Random.Range(0, 1) * 2 - 1));
-        float velz = (7 + (10 * (Random.value))) * ((Random.Range(0, 1) * 2 - 1));
+		float velMax=10f;
+        float velx = ((10 * (Random.value))) * ((Random.Range(0, 1) * 2 - 1));
+		float velz = (velMax-velx) * ((Random.Range(0, 1) * 2 - 1));
 
 
         impulsoIni = new Vector3(velx,0,velz);
