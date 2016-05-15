@@ -22,7 +22,7 @@ public class Bola : MonoBehaviour {
 	}
 
 	void Update(){
-		Debug.Log ("Velocidad: " + rb.velocity);
+		Debug.Log ("Velocidad: " + rb.velocity.magnitude);
 	}
 
 	void OnCollisionEnter(Collision col){
