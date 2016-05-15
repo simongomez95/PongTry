@@ -404,13 +404,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3481b86609f82e94c8d3190f7e159b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dirR: -1
+  pasoR: 1
   vel: 15
   percentDrop: 90
   percentBreak: 50
-  dirR: -1
-  pasoR: 1
-  powerup: {fileID: 173498, guid: 423b19ac09bdf433ca9945ee94c07d3d, type: 2}
   agrandado: 0
+  powerup: {fileID: 173498, guid: 423b19ac09bdf433ca9945ee94c07d3d, type: 2}
 --- !u!54 &1010312132
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -607,6 +607,10 @@ Prefab:
       propertyPath: campo
       value: 
       objectReference: {fileID: 221562637}
+    - target: {fileID: 11415696, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}
+      propertyPath: velIni
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}
   m_IsPrefabParent: 0
@@ -757,7 +761,7 @@ ReflectionProbe:
   m_Enabled: 1
   serializedVersion: 2
   m_Type: 0
-  m_Mode: 0
+  m_Mode: 1
   m_RefreshMode: 0
   m_TimeSlicingMode: 0
   m_Resolution: 128
