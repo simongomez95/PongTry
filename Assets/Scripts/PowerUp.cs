@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 public class PowerUp : MonoBehaviour {
     
-    public float percentDrop = 50f;
+    public float percentDrop = 0f;
 
 	// Use this for initialization
 	void Start () {
@@ -33,12 +33,14 @@ public class PowerUp : MonoBehaviour {
 
     private void Agrandar()
     {
-        Jugador jugador = GameObject.FindGameObjectWithTag("Player").GetComponent<Jugador>();
+        Jugador jugador = GameObject.FindGameObjectWithTag("Jugador1").GetComponent<Jugador>();
         jugador.agrandado = true;
+        Debug.Log("Agrandar");
     }
 
     void Invertir() {
         CampoJuego cj = GameObject.FindGameObjectWithTag("Field").GetComponent<CampoJuego>();
-            cj.invertido = true;
+        cj.invertido = true;
+        Debug.Log("Invertir");    
     }
 }

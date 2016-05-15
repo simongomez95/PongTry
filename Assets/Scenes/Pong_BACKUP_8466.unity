@@ -135,10 +135,49 @@ Transform:
   - {fileID: 1064533460}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+<<<<<<< HEAD
+--- !u!1 &322409822 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 105088, guid: a0572dfe07486402baef05ae25c3faf1, type: 2}
+  m_PrefabInternal: {fileID: 1106186077}
+--- !u!215 &322409827
+ReflectionProbe:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322409822}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Type: 0
+  m_Mode: 1
+  m_RefreshMode: 1
+  m_TimeSlicingMode: 0
+  m_Resolution: 128
+  m_UpdateFrequency: 0
+  m_Importance: 1
+  m_BoxSize: {x: 10, y: 10, z: 10}
+  m_BoxOffset: {x: 0, y: 0, z: 0}
+  m_NearClip: 0.3
+  m_FarClip: 1000
+  m_ShadowDistance: 100
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IntensityMultiplier: 1
+  m_BlendDistance: 1
+  m_HDR: 1
+  m_BoxProjection: 0
+  m_RenderDynamicObjects: 0
+  m_UseOcclusionCulling: 1
+  m_CustomBakedTexture: {fileID: 0}
+=======
 --- !u!1 &304125528 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 121308, guid: 36cf242721c4096488600e9fb390f157, type: 2}
   m_PrefabInternal: {fileID: 1720851088}
+>>>>>>> 4311c4fb4c8ea03b6bb47e199718190399006022
 --- !u!114 &394370860 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11408108, guid: 6b61222ef46d14a9c9cb408dc10df282,
@@ -301,7 +340,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: b8b03d395f5734e98af91ccf44f9bf47, type: 2}
       propertyPath: m_TagString
@@ -331,7 +370,7 @@ GameObject:
   - 114: {fileID: 1010312131}
   m_Layer: 0
   m_Name: Jugador
-  m_TagString: Jugador1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -401,11 +440,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1010312126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3481b86609f82e94c8d3190f7e159b54, type: 3}
+  m_Script: {fileID: 11500000, guid: 618186387c4ab5445887093de780d327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 15
-  percentDrop: 90
+  percentDrop: 5
   percentBreak: 50
   dirR: -1
   pasoR: 1
@@ -607,6 +646,14 @@ Prefab:
       propertyPath: campo
       value: 
       objectReference: {fileID: 221562637}
+    - target: {fileID: 2341072, guid: a0572dfe07486402baef05ae25c3faf1, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dc9a42e2a60c46089334ce33629a1cc, type: 2}
+    - target: {fileID: 2341072, guid: a0572dfe07486402baef05ae25c3faf1, type: 2}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac3a40e7362054cf6b4e0c06cf59c3db, type: 2}
   m_IsPrefabParent: 0
@@ -744,39 +791,3 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6528abcb013fe492d837ba94be1f3b02, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1927035807 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 131828, guid: 36cf242721c4096488600e9fb390f157, type: 2}
-  m_PrefabInternal: {fileID: 1720851088}
---- !u!215 &1927035812
-ReflectionProbe:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1927035807}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Type: 0
-  m_Mode: 0
-  m_RefreshMode: 0
-  m_TimeSlicingMode: 0
-  m_Resolution: 128
-  m_UpdateFrequency: 0
-  m_Importance: 1
-  m_BoxSize: {x: 10, y: 10, z: 10}
-  m_BoxOffset: {x: 0, y: 0, z: 0}
-  m_NearClip: 0.3
-  m_FarClip: 1000
-  m_ShadowDistance: 100
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IntensityMultiplier: 1
-  m_BlendDistance: 1
-  m_HDR: 1
-  m_BoxProjection: 0
-  m_RenderDynamicObjects: 0
-  m_UseOcclusionCulling: 1
-  m_CustomBakedTexture: {fileID: 0}

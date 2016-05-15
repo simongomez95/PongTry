@@ -6,7 +6,7 @@ using System.Collections;
 public class Jugador : MonoBehaviour {
 
 	public float vel = 60;
-	public float percentDrop = 5f;
+	public float percentDrop = 30f;
 	public float percentBreak = 50f;
 	public int dirR = -1;
 	public int pasoR = 1;
