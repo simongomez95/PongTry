@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 public class PowerUp : MonoBehaviour {
     
-    public float percentDrop = 0f;
+    public float percentDrop = 50f;
 
 	// Use this for initialization
 	void Start () {
