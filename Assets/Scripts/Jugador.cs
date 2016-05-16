@@ -29,7 +29,7 @@ public class Jugador : MonoBehaviour {
 			float rand = Random.Range(0f, 100f);
 			//Decidir si cambia al breakout
 			
-            if(rand<percentBreak){
+            if(rand<percentBreak && !cj.breaker){
                 //detiene la pelota
                 collision.rigidbody.velocity = Vector3.zero;
                 collision.rigidbody.angularVelocity = Vector3.zero;
