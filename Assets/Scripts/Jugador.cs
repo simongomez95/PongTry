@@ -32,6 +32,7 @@ public class Jugador : MonoBehaviour {
                 //detiene la pelota
                 collision.rigidbody.velocity = Vector3.zero;
                 collision.rigidbody.angularVelocity = Vector3.zero;
+                collision.rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
 
                 //calcula posición actual y final de rotacion de la paleta    
                 posActual = transform.eulerAngles;
@@ -42,6 +43,8 @@ public class Jugador : MonoBehaviour {
 
                 collision.rigidbody.velocity = Vector3.zero;
                 collision.rigidbody.angularVelocity = Vector3.zero;
+
+                collision.rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
             }
             
 			//Calculo nueva velocidad de la bola basada en las velocidades de la bola y la paleta al chocar
