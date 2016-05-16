@@ -62,26 +62,38 @@ public class Bola : MonoBehaviour {
 	}
     
     public void Spawnear(){
-		float velx = (velIni-3)*Random.value*(Random.Range(0, 2)*2-1);
-		float velz = (velIni-Mathf.Abs(velx))*(Random.Range(0, 2)*2-1);
-		float z=0;
-		if(velx*velz>0){
-			if(velx<0){
-				z=15;
+        Vector3 impulsoIni;
+        float velx = (velIni-3f)*Random.value*(Random.Range(0, 2f)*2f-1f);
+		float velz = (velIni-Mathf.Abs(velx))*(Random.Range(0, 2f)*2f-1f);
+		float z=0f;
+		if(velx*velz>0f){
+			if(velx<0f){
+				z=15f;
 			}
 		}else{
-			if(velz<0){
-				z=15;
+			if(velz<0f){
+				z=15f;
 			}
 		}
 		Vector3 inicial1 = new Vector3(0f, 1f, z);
 		Vector3 inicial2 = new Vector3(0f, 18f, z);
-		if(campo.invertido){
+
+        //Se checkea si el campo esta invertido y no en modo brickbreaker
+		if(campo.invertido && !campo.breaker){
 			transform.position = inicial2;
-		}else{
+		}else if(!campo.breaker){
 			transform.position = inicial1;
 		}
-        Vector3 impulsoIni = new Vector3(velx,0,velz);
+
+        //Si estamos en modo brickbreaker, envia la pelota hacia arriba
+        if (!campo.breaker)
+        {
+            impulsoIni = new Vector3(velx, 0, velz);
+        }
+        else
+        {
+            impulsoIni = new Vector3(velx, velz, 0);
+        }
         rb.velocity = Vector3.zero;
         rb.AddForce(impulsoIni,ForceMode.Impulse);
     }

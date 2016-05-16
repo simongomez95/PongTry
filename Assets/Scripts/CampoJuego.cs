@@ -4,6 +4,7 @@ using System.Collections;
 public class CampoJuego : MonoBehaviour {
     
     public bool invertido = false;
+    public bool breaker = false;
 
 	// Use this for initialization
 	void Start () {

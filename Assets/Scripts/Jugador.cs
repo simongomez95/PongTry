@@ -11,6 +11,7 @@ public class Jugador : MonoBehaviour {
 	public float percentBreak = 50f;
 	public bool agrandado = false;
 	public GameObject powerup;
+    public CampoJuego cj;
 
 	void Update(){
 		float input_x = Input.GetAxis("Horizontal");
@@ -45,6 +46,7 @@ public class Jugador : MonoBehaviour {
                 collision.rigidbody.angularVelocity = Vector3.zero;
 
                 collision.rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
+                cj.breaker = true;
             }
             
 			//Calculo nueva velocidad de la bola basada en las velocidades de la bola y la paleta al chocar

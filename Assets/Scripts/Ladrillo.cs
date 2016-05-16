@@ -7,6 +7,8 @@ public class Ladrillo : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        puntos = GameObject.Find("Score").GetComponent<Puntaje>();
 	
 	}
 	
