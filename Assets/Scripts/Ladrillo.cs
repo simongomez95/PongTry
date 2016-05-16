@@ -20,7 +20,7 @@ public class Ladrillo : MonoBehaviour {
         
         if(coll.gameObject.tag == "Bola") {
 			
-            puntos.puntaje1++;
+            puntos.puntaje2++;
             Destroy(gameObject);
         }
         

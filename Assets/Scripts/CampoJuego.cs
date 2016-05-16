@@ -13,6 +13,7 @@ public class CampoJuego : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        
         if(invertido) {
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 180f);
             StartCoroutine(DesInvertir());
