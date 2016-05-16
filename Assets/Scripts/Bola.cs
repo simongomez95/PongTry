@@ -22,11 +22,12 @@ public class Bola : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision col){
-		if(col.gameObject.gameObject == jugador1){
+		if(col.gameObject == jugador1){
+            campo.breaker = false;
 			Spawnear();
 			puntos.puntaje1++;
 			return;
-		}else if(col.gameObject.gameObject == jugador2){
+		}else if(col.gameObject == jugador2){
 			Spawnear();
 			puntos.puntaje2++;
 			return;
@@ -103,21 +104,27 @@ public class Bola : MonoBehaviour {
         //Se checkea si el campo esta invertido y no en modo brickbreaker
 		if(campo.invertido && !campo.breaker){
 			transform.position = inicial2;
+            
 		}else if(!campo.breaker){
 			transform.position = inicial1;
-		}
+            Debug.Log("Aqui?");
+        }
 
         //Si estamos en modo brickbreaker, envia la pelota hacia arriba
         if (!campo.breaker)
         {
             impulsoIni = new Vector3(velx, 0, velz);
+            Debug.Log("Y aqui");
         }
         else
         {
             impulsoIni = new Vector3(velx, velz, 0);
+            Debug.Log("Entra");
         }
         rb.velocity = Vector3.zero;
         rb.AddForce(impulsoIni,ForceMode.Impulse);
+        Debug.Log(impulsoIni.y);
+        Debug.Log("vz" + velz);
     }
 
 

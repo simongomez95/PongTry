@@ -33,7 +33,7 @@ public class Jugador : MonoBehaviour {
                 //detiene la pelota
                 collision.rigidbody.velocity = Vector3.zero;
                 collision.rigidbody.angularVelocity = Vector3.zero;
-                collision.rigidbody.constraints = RigidbodyConstraints.FreezePositionX;
+                
 
                 //calcula posición actual y final de rotacion de la paleta    
                 posActual = transform.eulerAngles;
@@ -44,9 +44,9 @@ public class Jugador : MonoBehaviour {
 
                 collision.rigidbody.velocity = Vector3.zero;
                 collision.rigidbody.angularVelocity = Vector3.zero;
-
-                collision.rigidbody.constraints = RigidbodyConstraints.FreezePositionZ;
-                cj.breaker = true;
+                
+                
+                
             }
             
 			//Calculo nueva velocidad de la bola basada en las velocidades de la bola y la paleta al chocar
@@ -71,19 +71,27 @@ public class Jugador : MonoBehaviour {
 	}
 
 	IEnumerator CambiarEscena(){
-		//suma paso a paso la rotacion cada frame
-		posActual.x += (pasoR * dirR);
+        //suma paso a paso la rotacion cada frame
+        GameObject.Find("Bola").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX;
+        posActual.x += (pasoR * dirR);
 		transform.parent.gameObject.transform.eulerAngles = posActual;
         //girar la bola alrededor del eje de la paleta
         //Vector3 posBola = bola.transform.position;
         Vector3 posPal = transform.position;
 		yield return new WaitForSeconds(0);
-		//checkea si ya termino de rotar tanto para en el sentido de las manecillas del reloj como en contra
-		if ((int)posActual.x > (int)posFinal.x || (int)posActual.x > (int)posFinal.x) {
-			StartCoroutine(CambiarEscena());
-		}
+        //checkea si ya termino de rotar tanto para en el sentido de las manecillas del reloj como en contra
+        if ((int)posActual.x > (int)posFinal.x || (int)posActual.x > (int)posFinal.x)
+        {
+            StartCoroutine(CambiarEscena());
+        }
+        else
+        {
+            cj.breaker = true;
+            GameObject.Find("Bola").GetComponent<Bola>().Spawnear();
+            GameObject.Find("Bola").GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ;
+        }
 
-	}
+    }
 
 	IEnumerator DesAgrandar(){
 		yield return new WaitForSeconds(5);
