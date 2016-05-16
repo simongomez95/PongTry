@@ -32,7 +32,12 @@ public class Bola : MonoBehaviour {
 			Spawnear();
 			puntos.puntaje2++;
 			return;
-		}
+		}else if(col.gameObject.name == "PisoArena")
+        {
+            campo.breaker = false;
+            GameObject.Find("GameObject").transform.eulerAngles = new Vector3(0f, transform.eulerAngles.y, transform.eulerAngles.z);
+            Spawnear();
+        }
 	}
 
 	void OnCollisionExit(Collision col){
@@ -104,10 +109,12 @@ public class Bola : MonoBehaviour {
 
         //Se checkea si el campo esta invertido y no en modo brickbreaker
 		if(campo.invertido && !campo.breaker){
+            GetComponent<Rigidbody>().constraints=RigidbodyConstraints.FreezePositionY;
 			transform.position = inicial2;
             
 		}else if(!campo.breaker){
-			transform.position = inicial1;
+            GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY;
+            transform.position = inicial1;
             Debug.Log("Aqui?");
         }
 
