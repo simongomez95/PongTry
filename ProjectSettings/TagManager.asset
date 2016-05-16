@@ -9,6 +9,7 @@ TagManager:
   - Field
   - Jugador1
   - Jugador2
+  - Score
   layers:
   - Default
   - TransparentFX

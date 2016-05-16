@@ -280,6 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   invertido: 0
+  breaker: 0
 --- !u!4 &221562638
 Transform:
   m_ObjectHideFlags: 0
@@ -295,7 +296,7 @@ Transform:
   - {fileID: 456362670}
   - {fileID: 993027289}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
 --- !u!1 &304125528
 GameObject:
   m_ObjectHideFlags: 0
@@ -1413,6 +1414,7 @@ MonoBehaviour:
   percentBreak: 50
   agrandado: 0
   powerup: {fileID: 173498, guid: 423b19ac09bdf433ca9945ee94c07d3d, type: 2}
+  cj: {fileID: 221562637}
 --- !u!54 &1010312132
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1778,6 +1780,10 @@ Prefab:
     - target: {fileID: 470370, guid: 6b61222ef46d14a9c9cb408dc10df282, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 154680, guid: 6b61222ef46d14a9c9cb408dc10df282, type: 2}
+      propertyPath: m_TagString
+      value: Score
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6b61222ef46d14a9c9cb408dc10df282, type: 2}

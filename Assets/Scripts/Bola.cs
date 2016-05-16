@@ -23,6 +23,7 @@ public class Bola : MonoBehaviour {
 
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject == jugador1){
+            Debug.Log("Pego contra mi gol");
             campo.breaker = false;
 			Spawnear();
 			puntos.puntaje1++;
