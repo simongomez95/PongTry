@@ -34,31 +34,53 @@ public class Bola : MonoBehaviour {
 	}
 
 	void OnCollisionExit(Collision col){
-		if(col.gameObject == IA){
-			if(rb.velocity.x<0){
-				rb.AddForce (new Vector3 (-velIncre, 0, -velIncre), ForceMode.VelocityChange);
-			}else{
-				rb.AddForce (new Vector3 (velIncre, 0, -velIncre), ForceMode.VelocityChange);
-			}
-		}else if(col.gameObject == player){
-			if(rb.velocity.x<0){
-				rb.AddForce (new Vector3 (-velIncre, 0, velIncre), ForceMode.VelocityChange);
-			}else{
-				rb.AddForce (new Vector3 (velIncre, 0, velIncre), ForceMode.VelocityChange);
-			}
-		}else if (col.gameObject.gameObject == izquierda) {
-			if(rb.velocity.z<0){
-				rb.AddForce (new Vector3 (velIncre, 0, -velIncre), ForceMode.VelocityChange);
-			}else{
-				rb.AddForce (new Vector3 (velIncre, 0, velIncre), ForceMode.VelocityChange);
-			}
-		}else if(col.gameObject.gameObject == derecha){
-			if(rb.velocity.z<0){
-				rb.AddForce (new Vector3 (-velIncre, 0, -velIncre), ForceMode.VelocityChange);
-			}else{
-				rb.AddForce (new Vector3 (-velIncre, 0, velIncre), ForceMode.VelocityChange);
-			}
-		}
+        if (!campo.breaker)
+        {
+            if (col.gameObject == IA)
+            {
+                if (rb.velocity.x < 0)
+                {
+                    rb.AddForce(new Vector3(-velIncre, 0, -velIncre), ForceMode.VelocityChange);
+                }
+                else
+                {
+                    rb.AddForce(new Vector3(velIncre, 0, -velIncre), ForceMode.VelocityChange);
+                }
+            }
+            else if (col.gameObject == player)
+            {
+                if (rb.velocity.x < 0)
+                {
+                    rb.AddForce(new Vector3(-velIncre, 0, velIncre), ForceMode.VelocityChange);
+                }
+                else
+                {
+                    rb.AddForce(new Vector3(velIncre, 0, velIncre), ForceMode.VelocityChange);
+                }
+            }
+            else if (col.gameObject == izquierda)
+            {
+                if (rb.velocity.z < 0)
+                {
+                    rb.AddForce(new Vector3(velIncre, 0, -velIncre), ForceMode.VelocityChange);
+                }
+                else
+                {
+                    rb.AddForce(new Vector3(velIncre, 0, velIncre), ForceMode.VelocityChange);
+                }
+            }
+            else if (col.gameObject == derecha)
+            {
+                if (rb.velocity.z < 0)
+                {
+                    rb.AddForce(new Vector3(-velIncre, 0, -velIncre), ForceMode.VelocityChange);
+                }
+                else
+                {
+                    rb.AddForce(new Vector3(-velIncre, 0, velIncre), ForceMode.VelocityChange);
+                }
+            }
+        }
 	}
     
     public void Spawnear(){
