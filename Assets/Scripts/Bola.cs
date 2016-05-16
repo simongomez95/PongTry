@@ -11,8 +11,10 @@ public class Bola : MonoBehaviour {
 	public GameObject player;
 	public GameObject jugador1;
 	public GameObject jugador2;
-	public GameObject derecha;
-	public GameObject izquierda;
+	public GameObject derechaPong;
+	public GameObject derechaBrick;
+	public GameObject izquierdaPong;
+	public GameObject izquierdaBrick;
 	public CampoJuego campo;
 
 	// Use this for initialization
@@ -36,53 +38,49 @@ public class Bola : MonoBehaviour {
 	}
 
 	void OnCollisionExit(Collision col){
-        if (!campo.breaker)
-        {
-            if (col.gameObject == IA)
-            {
-                if (rb.velocity.x < 0)
-                {
-                    rb.AddForce(new Vector3(-velIncre, 0, -velIncre), ForceMode.VelocityChange);
-                }
-                else
-                {
-                    rb.AddForce(new Vector3(velIncre, 0, -velIncre), ForceMode.VelocityChange);
-                }
-            }
-            else if (col.gameObject == player)
-            {
-                if (rb.velocity.x < 0)
-                {
-                    rb.AddForce(new Vector3(-velIncre, 0, velIncre), ForceMode.VelocityChange);
-                }
-                else
-                {
-                    rb.AddForce(new Vector3(velIncre, 0, velIncre), ForceMode.VelocityChange);
-                }
-            }
-            else if (col.gameObject == izquierda)
-            {
-                if (rb.velocity.z < 0)
-                {
-                    rb.AddForce(new Vector3(velIncre, 0, -velIncre), ForceMode.VelocityChange);
-                }
-                else
-                {
-                    rb.AddForce(new Vector3(velIncre, 0, velIncre), ForceMode.VelocityChange);
-                }
-            }
-            else if (col.gameObject == derecha)
-            {
-                if (rb.velocity.z < 0)
-                {
-                    rb.AddForce(new Vector3(-velIncre, 0, -velIncre), ForceMode.VelocityChange);
-                }
-                else
-                {
-                    rb.AddForce(new Vector3(-velIncre, 0, velIncre), ForceMode.VelocityChange);
-                }
-            }
-        }
+		if (!campo.breaker) {
+			if (col.gameObject == IA) {
+				if (rb.velocity.x < 0) {
+					rb.AddForce (new Vector3 (-velIncre, 0, -velIncre), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (velIncre, 0, -velIncre), ForceMode.VelocityChange);
+				}
+			} else if (col.gameObject == player) {
+				if (rb.velocity.x < 0) {
+					rb.AddForce (new Vector3 (-velIncre, 0, velIncre), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (velIncre, 0, velIncre), ForceMode.VelocityChange);
+				}
+			} else if (col.gameObject == izquierdaPong) {
+				if (rb.velocity.z < 0) {
+					rb.AddForce (new Vector3 (velIncre, 0, -velIncre), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (velIncre, 0, velIncre), ForceMode.VelocityChange);
+				}
+			} else if (col.gameObject == derechaPong) {
+				if (rb.velocity.z < 0) {
+					rb.AddForce (new Vector3 (-velIncre, 0, -velIncre), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (-velIncre, 0, velIncre), ForceMode.VelocityChange);
+				}
+			}
+		} else {
+			if (col.gameObject == izquierdaBrick) {
+				if (rb.velocity.y < 0) {
+					rb.AddForce (new Vector3 (velIncre, -velIncre, -0), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (velIncre, velIncre, 0), ForceMode.VelocityChange);
+				}
+			} else if (col.gameObject == derechaBrick) {
+				if (rb.velocity.y < 0) {
+					rb.AddForce (new Vector3 (-velIncre, velIncre, -0), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (-velIncre, -velIncre, 0), ForceMode.VelocityChange);
+				}
+			}
+		}
+		//Debug.Log ("Collider: " + col.gameObject);
+		Debug.Log ("Vel: " + rb.velocity);
 	}
     
     public void Spawnear(){
@@ -108,24 +106,24 @@ public class Bola : MonoBehaviour {
             
 		}else if(!campo.breaker){
 			transform.position = inicial1;
-            Debug.Log("Aqui?");
+            //Debug.Log("Aqui?");
         }
 
         //Si estamos en modo brickbreaker, envia la pelota hacia arriba
         if (!campo.breaker)
         {
             impulsoIni = new Vector3(velx, 0, velz);
-            Debug.Log("Y aqui");
+            //Debug.Log("Y aqui");
         }
         else
         {
             impulsoIni = new Vector3(velx, velz, 0);
-            Debug.Log("Entra");
+            //Debug.Log("Entra");
         }
         rb.velocity = Vector3.zero;
-        rb.AddForce(impulsoIni,ForceMode.Impulse);
-        Debug.Log(impulsoIni.y);
-        Debug.Log("vz" + velz);
+		rb.AddForce(impulsoIni,ForceMode.Impulse);
+        //Debug.Log(impulsoIni.y);
+        //Debug.Log("vz" + velz);
     }
 
 
