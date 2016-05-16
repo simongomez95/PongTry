@@ -11,8 +11,10 @@
 		public GameObject player;
 		public GameObject jugador1;
 		public GameObject jugador2;
-		public GameObject derecha;
-		public GameObject izquierda;
+		public GameObject derechaPong;
+		public GameObject derechaBrick;
+		public GameObject izquierdaPong;
+		public GameObject izquierdaBrick;
 		public CampoJuego campo;
 
 		// Use this for initialization
@@ -40,55 +42,51 @@
 			}
 		}
 
-		void OnCollisionExit(Collision col){
-			if (!campo.breaker)
-			{
-				if (col.gameObject == IA)
-				{
-					if (rb.velocity.x < 0)
-					{
-						rb.AddForce(new Vector3(-velIncre, 0, -velIncre), ForceMode.VelocityChange);
-					}
-					else
-					{
-						rb.AddForce(new Vector3(velIncre, 0, -velIncre), ForceMode.VelocityChange);
-					}
+	void OnCollisionExit(Collision col){
+		if (!campo.breaker) {
+			if (col.gameObject == IA) {
+				if (rb.velocity.x < 0) {
+					rb.AddForce (new Vector3 (-velIncre, 0, -velIncre), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (velIncre, 0, -velIncre), ForceMode.VelocityChange);
 				}
-				else if (col.gameObject == player)
-				{
-					if (rb.velocity.x < 0)
-					{
-						rb.AddForce(new Vector3(-velIncre, 0, velIncre), ForceMode.VelocityChange);
-					}
-					else
-					{
-						rb.AddForce(new Vector3(velIncre, 0, velIncre), ForceMode.VelocityChange);
-					}
+			} else if (col.gameObject == player) {
+				if (rb.velocity.x < 0) {
+					rb.AddForce (new Vector3 (-velIncre, 0, velIncre), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (velIncre, 0, velIncre), ForceMode.VelocityChange);
 				}
-				else if (col.gameObject == izquierda)
-				{
-					if (rb.velocity.z < 0)
-					{
-						rb.AddForce(new Vector3(velIncre, 0, -velIncre), ForceMode.VelocityChange);
-					}
-					else
-					{
-						rb.AddForce(new Vector3(velIncre, 0, velIncre), ForceMode.VelocityChange);
-					}
+			} else if (col.gameObject == izquierdaPong) {
+				if (rb.velocity.z < 0) {
+					rb.AddForce (new Vector3 (velIncre, 0, -velIncre), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (velIncre, 0, velIncre), ForceMode.VelocityChange);
 				}
-				else if (col.gameObject == derecha)
-				{
-					if (rb.velocity.z < 0)
-					{
-						rb.AddForce(new Vector3(-velIncre, 0, -velIncre), ForceMode.VelocityChange);
-					}
-					else
-					{
-						rb.AddForce(new Vector3(-velIncre, 0, velIncre), ForceMode.VelocityChange);
-					}
+			} else if (col.gameObject == derechaPong) {
+				if (rb.velocity.z < 0) {
+					rb.AddForce (new Vector3 (-velIncre, 0, -velIncre), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (-velIncre, 0, velIncre), ForceMode.VelocityChange);
+				}
+			}
+		} else {
+			if (col.gameObject == izquierdaBrick) {
+				if (rb.velocity.y < 0) {
+					rb.AddForce (new Vector3 (velIncre, -velIncre, -0), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (velIncre, velIncre, 0), ForceMode.VelocityChange);
+				}
+			} else if (col.gameObject == derechaBrick) {
+				if (rb.velocity.y < 0) {
+					rb.AddForce (new Vector3 (-velIncre, velIncre, -0), ForceMode.VelocityChange);
+				} else {
+					rb.AddForce (new Vector3 (-velIncre, -velIncre, 0), ForceMode.VelocityChange);
 				}
 			}
 		}
+		//Debug.Log ("Collider: " + col.gameObject);
+		Debug.Log ("Vel: " + rb.velocity);
+	}
 
 		public void Spawnear(){
 			Vector3 impulsoIni;
