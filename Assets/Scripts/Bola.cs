@@ -126,7 +126,15 @@ public class Bola : MonoBehaviour {
         }
         else
         {
-            impulsoIni = new Vector3(velx, velz, 0);
+            if(campo.invertido)
+            {
+                impulsoIni = new Vector3(velx, -velz, 0);
+            }
+            else
+            {
+                impulsoIni = new Vector3(velx, velz, 0);
+            }
+            
             Debug.Log("Entra");
         }
         rb.velocity = Vector3.zero;
